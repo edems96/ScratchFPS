@@ -11,3 +11,10 @@ int BSPHeader::getVersion() {
 BSPDirentry *BSPHeader::getDirentries() {
 	return this->direntries;
 }
+
+bool BSPHeader::Read(FILE *f, int offset) {
+	if( !f )
+		return false;
+	
+	return fread(&this, sizeof(this), 1, f) == 1;
+}

@@ -15,5 +15,6 @@ class BSPHeader {
 		int 			getVersion();
 		BSPDirentry 	*getDirentries();
 		
+		bool Read(FILE *f, int offset);
 };
 #endif
